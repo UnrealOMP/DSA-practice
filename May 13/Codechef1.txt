@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+
+        while (t-- > 0) {
+            int n = scanner.nextInt();
+            int[] d = new int[n];
+            
+            for (int i = 0; i < n; i++) {
+                d[i] = scanner.nextInt();
+            }
+            Boolean found = true;
+            
+            for(int j = 1; j < n; j++){
+                if(d[j] < d[j-1]){
+                    found = false;
+                }
+            }
+            if(found){
+                System.out.println("Yes");
+            }else{
+                System.out.println("No");
+            }
+        }
+    }
+}

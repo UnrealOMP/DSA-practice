@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+
+        while (t-- > 0) {
+            int n = scanner.nextInt();
+            int[] a = new int[n];
+            int[] b = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                a[i] = scanner.nextInt();
+            }
+
+            for (int i = 0; i < n; i++) {
+                b[i] = scanner.nextInt();
+            }
+        int i = 0;
+        int omcount = 0;
+        int addycount = 0;
+        int omCurrent = 0;
+        int addyCurrent = 0;
+        while(i < n){
+            if(a[i] != 0){
+                omCurrent++;
+                omcount = Math.max(omCurrent, omcount);
+            }else{omCurrent = 0;
+            }
+            if(b[i] != 0){
+                addyCurrent++;
+                addycount = Math.max(addycount, addyCurrent);
+            }else{addyCurrent = 0;
+            }
+            i++;
+        }
+        if(omcount > addycount){
+            System.out.println("Om");
+        }else if(addycount > omcount){
+            System.out.println("Addy");
+        }else{
+            System.out.println("Draw");
+        }
+        }
+        
+    }
+}
